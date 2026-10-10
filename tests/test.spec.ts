@@ -17,7 +17,7 @@ const [newPage] = await Promise.all([
 
 await newPage.setViewportSize({ width: 1920, height: 1080 });
 await newPage.waitForLoadState('domcontentloaded');
-await newPage.waitForURL('https://playwrightpad.in/sandbox/banking');
+await newPage.waitForURL('/sandbox/banking');
 await expect(newPage.getByText('APEX BANK')).toBeVisible();
 await expect(newPage.getByText('APEX BANK')).toHaveText('APEX BANK');
 
@@ -25,7 +25,7 @@ await newPage.getByPlaceholder('Enter username').fill('apex_user');
 await newPage.getByPlaceholder('Enter password').fill('Password123!');
 await newPage.getByRole('button', { name: 'LOGIN' }).click();
 
-await newPage.waitForURL('https://playwrightpad.in/sandbox/banking');
+await newPage.waitForURL('/sandbox/banking');
 await expect(newPage.getByText('Welcome back, Apex User')).toBeVisible();
 
 await newPage.getByRole('button', { name: 'Funds Transfer' }).click();
@@ -61,7 +61,7 @@ const [newPage] = await Promise.all([
 ]);
 await newPage.setViewportSize({ width: 1920, height: 1080 });
 await newPage.waitForLoadState('domcontentloaded');
-await newPage.waitForURL('https://playwrightpad.in/sandbox/banking');
+await newPage.waitForURL('/sandbox/banking');
 await expect(newPage.getByText('APEX BANK')).toBeVisible();
 await expect(newPage.getByText('APEX BANK')).toHaveText('APEX BANK');
 await newPage.getByPlaceholder('Enter username').fill('apex_user');
